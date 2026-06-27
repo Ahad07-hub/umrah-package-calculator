@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umrah package calculator</title>
+<meta name="description" content="Work out Umrah package costs in seconds — hotel nights, traveler ages, ticket price, discount and commission, all in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header no-print">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <img src="assets/logo.jpg" alt="Al Habib World Travel & Tours logo" class="brand-mark">
+      <span class="brand-name">Al Habib <em>World Travel &amp; Tours</em></span>
+    </div>
+    <p class="header-tag">Umrah package pricing tool</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="intro no-print">
+    <h1>Work out the package cost, line by line.</h1>
+    <p>Enter the hotel rates, traveler counts, ticket price and your margin — the total updates as you type, and you can print a clean quote for the customer.</p>
+  </section>
+
+  <div class="arch-divider no-print" aria-hidden="true"></div>
+
+  <section class="calculator" aria-label="Umrah package calculator">
+
+    <div class="hotel-grid no-print">
+
+      <div class="card hotel-card" data-city="makkah">
+        <div class="card-head">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2 C8 6, 6.5 9, 6.5 12.5 C6.5 17, 9 20, 12 20 C15 20, 17.5 17, 17.5 12.5 C17.5 9, 16 6, 12 2 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="3" y1="21" x2="21" y2="21" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+          <h2>Makkah hotel</h2>
+        </div>
+
+        <div class="field">
+          <label for="mk-name">Hotel name</label>
+          <input type="text" id="mk-name" placeholder="Enter Makkah hotel name">
+        </div>
+
+        <div class="field">
+          <label for="mk-room-type">Room type</label>
+          <select id="mk-room-type">
+            <option value="sharing">Sharing</option>
+            <option value="double">Double</option>
+            <option value="triple">Triple</option>
+            <option value="quad">Quad</option>
+          </select>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="mk-price">Price / night</label>
+            <div class="input-prefix">
+              <span>SR</span>
+              <input type="number" id="mk-price" placeholder="55" min="0" inputmode="decimal">
+            </div>
+          </div>
+          <div class="field">
+            <label for="mk-nights">Nights</label>
+            <input type="number" id="mk-nights" placeholder="10" min="0" inputmode="numeric">
+          </div>
+        </div>
+
+        <label class="split-toggle">
+          <input type="checkbox" id="mk-split-toggle">
+          <span>Rate changes mid-stay (split into two periods)</span>
+        </label>
+
+        <div class="split-fields" id="mk-split-fields" hidden>
+          <p class="split-caption">Remaining nights at a new rate</p>
+          <div class="field-row">
+            <div class="field">
+              <label for="mk-price-2">Price / night</label>
+              <div class="input-prefix">
+                <span>SR</span>
+                <input type="number" id="mk-price-2" placeholder="60" min="0" inputmode="decimal">
+              </div>
+            </div>
+            <div class="field">
+              <label for="mk-nights-2">Nights</label>
+              <input type="number" id="mk-nights-2" placeholder="2" min="0" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card hotel-card" data-city="madina">
+        <div class="card-head">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2 C8 6, 6.5 9, 6.5 12.5 C6.5 17, 9 20, 12 20 C15 20, 17.5 17, 17.5 12.5 C17.5 9, 16 6, 12 2 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="3" y1="21" x2="21" y2="21" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+          <h2>Madina hotel</h2>
+        </div>
+
+        <div class="field">
+          <label for="md-name">Hotel name</label>
+          <input type="text" id="md-name" placeholder="Enter Madina hotel name">
+        </div>
+
+        <div class="field">
+          <label for="md-room-type">Room type</label>
+          <select id="md-room-type">
+            <option value="sharing">Sharing</option>
+            <option value="double">Double</option>
+            <option value="triple">Triple</option>
+            <option value="quad">Quad</option>
+          </select>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="md-price">Price / night</label>
+            <div class="input-prefix">
+              <span>SR</span>
+              <input type="number" id="md-price" placeholder="49" min="0" inputmode="decimal">
+            </div>
+          </div>
+          <div class="field">
+            <label for="md-nights">Nights</label>
+            <input type="number" id="md-nights" placeholder="4" min="0" inputmode="numeric">
+          </div>
+        </div>
+
+        <label class="split-toggle">
+          <input type="checkbox" id="md-split-toggle">
+          <span>Rate changes mid-stay (split into two periods)</span>
+        </label>
+
+        <div class="split-fields" id="md-split-fields" hidden>
+          <p class="split-caption">Remaining nights at a new rate</p>
+          <div class="field-row">
+            <div class="field">
+              <label for="md-price-2">Price / night</label>
+              <div class="input-prefix">
+                <span>SR</span>
+                <input type="number" id="md-price-2" placeholder="55" min="0" inputmode="decimal">
+              </div>
+            </div>
+            <div class="field">
+              <label for="md-nights-2">Nights</label>
+              <input type="number" id="md-nights-2" placeholder="2" min="0" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card travelers-card no-print">
+      <div class="card-head">
+        <span class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="9" r="2.3" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M14.8 14.2c2.6-.5 5 1.4 5.9 4.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+        </span>
+        <h2>Travelers</h2>
+      </div>
+
+      <p class="travelers-note">Hotel cost is calculated once and applied to adults only. Children and infants add their own visa (PEX) and ticket price, multiplied by their count — no hotel share.</p>
+
+      <div class="traveler-row">
+        <div class="traveler-label">
+          <span class="traveler-tag">Adults</span>
+        </div>
+        <div class="field">
+          <label for="adult-count">Count</label>
+          <input type="number" id="adult-count" placeholder="5" min="0" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="adult-pex">PEX (visa)</label>
+          <div class="input-prefix"><span>SR</span><input type="number" id="adult-pex" placeholder="600" min="0" inputmode="decimal"></div>
+        </div>
+        <div class="field">
+          <label for="adult-ticket">Ticket price</label>
+          <div class="input-prefix"><span>PKR</span><input type="number" id="adult-ticket" placeholder="176000" min="0" inputmode="decimal"></div>
+        </div>
+      </div>
+
+      <label class="split-toggle">
+        <input type="checkbox" id="child-toggle">
+        <span>Add children (different PEX / ticket)</span>
+      </label>
+
+      <div class="traveler-row split-fields" id="child-fields" hidden>
+        <div class="traveler-label">
+          <span class="traveler-tag">Children</span>
+        </div>
+        <div class="field">
+          <label for="child-count">Count</label>
+          <input type="number" id="child-count" placeholder="2" min="0" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="child-pex">PEX (visa)</label>
+          <div class="input-prefix"><span>SR</span><input type="number" id="child-pex" placeholder="400" min="0" inputmode="decimal"></div>
+        </div>
+        <div class="field">
+          <label for="child-ticket">Ticket price</label>
+          <div class="input-prefix"><span>PKR</span><input type="number" id="child-ticket" placeholder="130000" min="0" inputmode="decimal"></div>
+        </div>
+      </div>
+
+      <label class="split-toggle">
+        <input type="checkbox" id="infant-toggle">
+        <span>Add infants (different PEX / ticket)</span>
+      </label>
+
+      <div class="traveler-row split-fields" id="infant-fields" hidden>
+        <div class="traveler-label">
+          <span class="traveler-tag">Infants</span>
+        </div>
+        <div class="field">
+          <label for="infant-count">Count</label>
+          <input type="number" id="infant-count" placeholder="1" min="0" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="infant-pex">PEX (visa)</label>
+          <div class="input-prefix"><span>SR</span><input type="number" id="infant-pex" placeholder="0" min="0" inputmode="decimal"></div>
+        </div>
+        <div class="field">
+          <label for="infant-ticket">Ticket price</label>
+          <div class="input-prefix"><span>PKR</span><input type="number" id="infant-ticket" placeholder="20000" min="0" inputmode="decimal"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card charges-card no-print">
+      <div class="card-head">
+        <span class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="7" x2="12" y2="17" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="9.5" x2="15" y2="9.5" stroke="currentColor" stroke-width="1.3"/></svg>
+        </span>
+        <h2>Rate, discount &amp; commission</h2>
+      </div>
+
+      <div class="field-row three">
+        <div class="field">
+          <label for="rate">Riyal rate</label>
+          <input type="number" id="rate" placeholder="76.5" min="0" step="0.01" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="discount">Discount</label>
+          <div class="input-prefix">
+            <select id="discount-type" class="prefix-select">
+              <option value="flat">PKR</option>
+              <option value="percent">%</option>
+            </select>
+            <input type="number" id="discount" placeholder="2000" min="0" inputmode="decimal">
+          </div>
+        </div>
+        <div class="field">
+          <label for="commission">Commission</label>
+          <div class="input-prefix"><span>PKR</span><input type="number" id="commission" placeholder="5000" min="0" inputmode="decimal"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-panel">
+      <div class="result-block">
+        <p class="result-label">Total without commission</p>
+        <p class="result-value" id="total-no-comm">PKR 0</p>
+      </div>
+      <div class="result-divider" aria-hidden="true"></div>
+      <div class="result-block highlight">
+        <p class="result-label">Final price with commission</p>
+        <p class="result-value" id="total-with-comm">PKR 0</p>
+      </div>
+    </div>
+
+    <p class="breakdown no-print" id="breakdown" aria-live="polite"></p>
+
+    <div class="action-row no-print">
+      <button type="button" class="reset-btn" id="reset-btn">Clear all fields</button>
+      <button type="button" class="print-btn" id="print-btn">Print / save as PDF</button>
+    </div>
+
+  </section>
+
+  <section class="print-quote" id="print-quote" aria-hidden="true">
+    <div class="quote-header">
+      <div class="quote-header-top">
+        <img src="assets/logo.jpg" alt="Al Habib World Travel & Tours" class="quote-logo">
+        <div>
+          <h1>Al Habib World Travel &amp; Tours</h1>
+          <p class="quote-subtitle">Umrah package quote</p>
+        </div>
+      </div>
+      <p id="quote-date"></p>
+    </div>
+
+    <table class="quote-table">
+      <tbody>
+        <tr><th colspan="2">Makkah</th></tr>
+        <tr><td>Hotel</td><td id="q-mk-name">—</td></tr>
+        <tr><td>Room type</td><td id="q-mk-room">—</td></tr>
+        <tr><td>Rate × nights</td><td id="q-mk-stay">—</td></tr>
+
+        <tr><th colspan="2">Madina</th></tr>
+        <tr><td>Hotel</td><td id="q-md-name">—</td></tr>
+        <tr><td>Room type</td><td id="q-md-room">—</td></tr>
+        <tr><td>Rate × nights</td><td id="q-md-stay">—</td></tr>
+
+        <tr><th colspan="2">Exchange rate</th></tr>
+        <tr><td>Riyal rate used</td><td id="q-rate">—</td></tr>
+      </tbody>
+    </table>
+
+    <table class="quote-table traveler-table">
+      <thead>
+        <tr>
+          <th>Traveler type</th>
+          <th>Count</th>
+          <th>Visa (PEX)</th>
+          <th>Ticket</th>
+          <th>Per person</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="q-adults-row">
+          <td>Adults</td>
+          <td id="q-adult-count">—</td>
+          <td id="q-adult-pex">—</td>
+          <td id="q-adult-ticket">—</td>
+          <td id="q-adult-per-person">—</td>
+          <td id="q-adult-subtotal">—</td>
+        </tr>
+        <tr id="q-children-row">
+          <td>Children</td>
+          <td id="q-child-count">—</td>
+          <td id="q-child-pex">—</td>
+          <td id="q-child-ticket">—</td>
+          <td id="q-child-per-person">—</td>
+          <td id="q-child-subtotal">—</td>
+        </tr>
+        <tr id="q-infants-row">
+          <td>Infants</td>
+          <td id="q-infant-count">—</td>
+          <td id="q-infant-pex">—</td>
+          <td id="q-infant-ticket">—</td>
+          <td id="q-infant-per-person">—</td>
+          <td id="q-infant-subtotal">—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="quote-table">
+      <tbody id="q-discount-row" style="display:none;">
+        <tr><td>Discount</td><td id="q-discount">—</td></tr>
+      </tbody>
+    </table>
+
+    <div class="quote-total">
+      <span>Total package price</span>
+      <strong id="q-final">PKR 0</strong>
+    </div>
+
+    <p class="quote-footnote">This quote is an estimate based on the figures entered and may change with hotel or ticket availability. Valid at the time of issue.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap">
+    <p>Built for quoting Umrah packages quickly. Figures are estimates — confirm final pricing before issuing a quote.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
